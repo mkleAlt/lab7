@@ -3,8 +3,8 @@ package entities;
 public class Point {
     private final double x;
     private final double y;
-    private final static Point START = new Point(0, 0);
-    private final static Point START_FROM_X1 = new Point(1, 0);
+    public final static Point START = new Point(0, 0);
+    public final static Point START_FROM_X1 = new Point(1, 0);
 
     private Point(double x, double y) {
         this.x = x;
@@ -24,7 +24,7 @@ public class Point {
     }
 
     public Point move(double vx, double vy) {
-        return new Point(x + vx, y + vy);
+        return new Point(Math.round((x + vx) * 100.0) / 100.0, Math.round((y + vy) * 100.0) / 100.0);
     }
 
     public Point symmetryOx() {
@@ -36,9 +36,10 @@ public class Point {
     }
 
     public Point rotate(int degree) {
+        double radian = degree*Math.PI/180;
         return new Point(
-                x*Math.cos(degree) - y*Math.sin(degree),
-                y*Math.cos(degree) - x*Math.sin(degree)
+                Math.round((x*Math.cos(radian) - y*Math.sin(radian)) * 100.0) / 100.0,
+                Math.round((y*Math.cos(radian) - x*Math.sin(radian)) * 100.0) / 100.0
         );
     }
 
