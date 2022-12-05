@@ -20,21 +20,21 @@ public class Point {
     }
 
     public Point move(double vx, double vy) {
-        return new Point(this.getX() + vx, this.getX() + vy);
+        return new Point(x + vx, y + vy);
     }
 
     public Point symmetryOx() {
-        return new Point(this.getX(), -this.getY());
+        return new Point(x, -y);
     }
 
     public Point symmetryOy() {
-        return new Point(-this.getX(), this.getY());
+        return new Point(-x, y);
     }
 
     public Point rotate(int degree) {
         return new Point(
-                this.getX()*Math.cos(degree) - this.getY()*Math.sin(degree),
-                this.getY()*Math.cos(degree) - this.getX()*Math.sin(degree)
+                x*Math.cos(degree) - y*Math.sin(degree),
+                y*Math.cos(degree) - x*Math.sin(degree)
         );
     }
 
