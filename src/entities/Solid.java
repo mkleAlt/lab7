@@ -16,13 +16,9 @@ abstract class Solid {
         return unit;
     }
 
-    public double volume() {
-        return x*y*z;
-    }
+    public abstract double volume();
 
-    public double surfaceArea() {
-        return x*y*2 + x*z*2 + y*z*2;
-    }
+    public abstract double surfaceArea();
 
     public boolean equals(Solid o) {
        return this.getUnit() == o.getUnit();

@@ -1,19 +1,31 @@
 package enums;
 
 public enum Unit {
-    mm("milimetr"),
-    cm("centymetr"),
-    dm("decymetr"),
-    m("metr");
+    mm(1, "mm", "milimetr"),
+    cm(10, "cm", "centymetr"),
+    dm(100, "dm", "decymetr"),
+    m(1000, "m", "metr");
 
-    private String name;
+    private int value;
+    private String shortName;
+    private String fullName;
 
-    Unit(String name) {
-        this.name = name;
+    Unit(int value, String shortName, String fullName) {
+        this.value = value;
+        this.shortName = shortName;
+        this.fullName = fullName;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public String getFullName() {
+        return fullName;
     }
 
     @Override
     public String toString() {
-        return this.name();
+        return this.shortName;
     }
 }
