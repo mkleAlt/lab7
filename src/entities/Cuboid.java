@@ -1,6 +1,5 @@
 package entities;
 
-import enums.Unit;
 import validators.doubleValidator;
 
 public class Cuboid extends Solid {
@@ -10,7 +9,6 @@ public class Cuboid extends Solid {
 
     public Cuboid(Unit unit, double a, double b, double c) {
         super(unit);
-        this.unit = unit;
         setA(a);
         setB(b);
         setC(c);
@@ -41,7 +39,16 @@ public class Cuboid extends Solid {
         return a*b*2 + a*c*2 + b*c*2;
     }
 
-    public boolean equals(Cuboid o, double epsylon) {
+    public boolean equals(Cuboid o, int epsylon) {
         return Math.abs(this.getUnit().getValue() - o.getUnit().getValue()) <= epsylon;
+    }
+
+    @Override
+    public String toString() {
+        return "Cuboid{" +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                '}';
     }
 }

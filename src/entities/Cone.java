@@ -1,6 +1,5 @@
 package entities;
 
-import enums.Unit;
 import validators.doubleValidator;
 
 public class Cone extends Solid {
@@ -9,7 +8,6 @@ public class Cone extends Solid {
 
     public Cone(Unit unit, double h, double r) {
         super(unit);
-        this.unit = unit;
         setH(h);
         setR(r);
     }
@@ -35,7 +33,15 @@ public class Cone extends Solid {
         return Math.PI*r*(r+l);
     }
 
-    public boolean equals(Cone o, double epsylon) {
+    public boolean equals(Cone o, int epsylon) {
         return Math.abs(this.getUnit().getValue() - o.getUnit().getValue()) <= epsylon;
+    }
+
+    @Override
+    public String toString() {
+        return "Cone{" +
+                "h=" + h +
+                ", r=" + r +
+                '}';
     }
 }

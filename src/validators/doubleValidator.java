@@ -20,7 +20,7 @@ public class doubleValidator {
 
     public static boolean lessThanZero(double value) {
         if(value < 0) {
-            throw new LessThanZeroException("Wymiar bryły musi być większy lub równy zero. Podano wartość " + value);
+            throw new LessThanZeroException("Wymiar bryly musi byc wiekszy lub rowny zero. Podano wartosc " + value);
         } else {
             return true;
         }
