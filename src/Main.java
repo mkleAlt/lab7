@@ -1,12 +1,12 @@
 import entities.Point;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         System.out.println("Laboratorium 8 - testy:");
-        brylyTest();
+        solidsTest();
     }
 
-    public static void brylyTest() {
+    public static void solidsTest() {
 
     }
 }

@@ -1,8 +1,6 @@
 package entities;
 
 import enums.Unit;
-import exceptions.LessThanZeroException;
-import validators.doubleValidator;
 
 abstract class Solid {
     private double x;
