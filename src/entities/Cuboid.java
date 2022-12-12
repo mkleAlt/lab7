@@ -1,14 +1,34 @@
 package entities;
 
 import enums.Unit;
+import validators.doubleValidator;
 
 public class Cuboid extends Solid {
     private double a;
     private double b;
     private double c;
 
-    public Cuboid(Unit unit) {
+    public Cuboid(Unit unit, double a, double b, double c) {
         super(unit);
+        this.unit = unit;
+        setA(a);
+        setB(b);
+        setC(c);
+    }
+
+    public void setA(double a) {
+        doubleValidator.getInstance().validate(a);
+        this.a = a;
+    }
+
+    public void setB(double b) {
+        doubleValidator.getInstance().validate(b);
+        this.b = b;
+    }
+
+    public void setC(double c) {
+        doubleValidator.getInstance().validate(c);
+        this.c = c;
     }
 
     @Override

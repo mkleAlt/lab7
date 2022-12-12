@@ -1,12 +1,14 @@
 package entities;
 
 import enums.Unit;
+import exceptions.LessThanZeroException;
+import validators.doubleValidator;
 
 abstract class Solid {
     private double x;
     private double y;
     private double z;
-    private Unit unit;
+    public Unit unit;
 
     public Solid(Unit unit) {
         this.unit = unit;

@@ -1,13 +1,27 @@
 package entities;
 
 import enums.Unit;
+import validators.doubleValidator;
 
 public class Cone extends Solid {
     private double h;
     private double r;
 
-    public Cone(Unit unit) {
+    public Cone(Unit unit, double h, double r) {
         super(unit);
+        this.unit = unit;
+        setH(h);
+        setR(r);
+    }
+
+    public void setH(double h) {
+        doubleValidator.getInstance().validate(h);
+        this.h = h;
+    }
+
+    public void setR(double r) {
+        doubleValidator.getInstance().validate(r);
+        this.r = r;
     }
 
     @Override
