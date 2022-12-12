@@ -2,26 +2,26 @@ package entities;
 
 import enums.Unit;
 
-public class Cuboid extends Solid {
-    private double a;
-    private double b;
-    private double c;
+public class Cone extends Solid {
+    private double h;
+    private double r;
 
-    public Cuboid(Unit unit) {
+    public Cone(Unit unit) {
         super(unit);
     }
 
     @Override
     public double volume() {
-        return a*b*c;
+        return Math.PI*r*r*h/3;
     }
 
     @Override
     public double surfaceArea() {
-        return a*b*2 + a*c*2 + b*c*2;
+        double l = Math.sqrt(h*h + r*r);
+        return Math.PI*r*(r+l);
     }
 
-    public boolean equals(Cuboid o, double epsylon) {
+    public boolean equals(Cone o, double epsylon) {
         return Math.abs(this.getUnit().getValue() - o.getUnit().getValue()) <= epsylon;
     }
 }
