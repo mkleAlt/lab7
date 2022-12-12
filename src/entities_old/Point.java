@@ -1,4 +1,4 @@
-package entities;
+package entities_old;
 
 public class Point {
     private final double x;
